@@ -26,7 +26,7 @@ public class Heal implements CommandExecutor {
 						if (args.length == 0) {
 							Player player = (Player) sender;
 							player.setHealth(20);
-							player.sendMessage(org.bukkit.ChatColor.BLUE + "You have been " + org.bukkit.ChatColor.RED
+							player.sendMessage(org.bukkit.ChatColor.DARK_BLUE + "You have been " + org.bukkit.ChatColor.RED
 									+ "Healed.");
 						} else if (args.length == 1) {
 							Player player = (Player) sender;
@@ -36,7 +36,7 @@ public class Heal implements CommandExecutor {
 								return true;
 							}
 							t.setHealth(20);
-							t.sendMessage(org.bukkit.ChatColor.BLUE + "You have been " + org.bukkit.ChatColor.RED
+							t.sendMessage(org.bukkit.ChatColor.DARK_BLUE + "You have been " + org.bukkit.ChatColor.RED
 									+ "Healed.");
 						}
 					}
