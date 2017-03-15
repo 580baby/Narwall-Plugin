@@ -22,7 +22,7 @@ public class Heal implements CommandExecutor {
 
 			if (cmd.getName().equalsIgnoreCase("heal")) {
 				if (sender instanceof Player) {
-					if (sender.hasPermission("narwall.heal")) {
+					if (sender.hasPermission("narwallheal")) {
 						if (args.length == 0) {
 							Player player = (Player) sender;
 							player.setHealth(20);
