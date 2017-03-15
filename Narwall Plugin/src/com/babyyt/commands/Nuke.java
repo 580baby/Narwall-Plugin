@@ -19,7 +19,7 @@ public class Nuke implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("nuke")) {
 			if (sender instanceof Player) {
-				if (sender.hasPermission("narwall.")) {
+				if (sender.hasPermission("narwall.nuke")) {
 					Player player = (Player) sender;
 					for(int i = 0; i < 100; i++){
 						player.getWorld().spawnEntity(player.getLocation(), EntityType.PRIMED_TNT);
