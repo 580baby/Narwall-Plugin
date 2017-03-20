@@ -41,27 +41,31 @@ public class Tags implements Listener {
 		String pName = name;
 		String tag = Get_Tag.getTag(p);
 		try {
-			Method getHandle = p.getClass().getMethod("getHandle", (Class<?>[]) null);
+			Method getHandle = player.getClass().getMethod("getHandle", (Class<?>[]) null);
 			try {
 				Class.forName("com.mojang.authlib.GameProfile");
-			} catch (ClassNotFoundException e1) {
-			}
-			Object profile = getHandle.invoke(p).getClass().getMethod("getProfile").invoke(getHandle.invoke(p));
-			Field ff = profile.getClass().getDeclaredField("name");
-			ff.setAccessible(true);
-			ff.set(profile, pName);
-			try {
-				Class.forName("com.mojang.authlib.GameProfile");
-			} catch (ClassNotFoundException e1) {
-			}
-			for (Player ps : Bukkit.getOnlinePlayers()) {
-				ps.hidePlayer(p);
-				ps.showPlayer(p);
-			}
-		} catch (NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException
-				| InvocationTargetException | NoSuchFieldException e1) {
-			e1.printStackTrace();
-		}
+				} catch (ClassNotFoundException e) {
+				}
+				Object profile = getHandle.invoke(player).getClass().getMethod("getProfile")
+					.invoke(getHandle.invoke(player));
+				Field ff = profile.getClass().getDeclaredField("name");
+				ff.setAccessible(true);
+				ff.set(profile, Get_ChatColor.getChatColor(player) + name);
+				name = player.getName();
+				try {
+					Class.forName("com.mojang.authlib.GameProfile");
+				} catch (ClassNotFoundException e) {
+				}
+				ff.setAccessible(true);
+				ff.set(profile, name);
+				for (Player players : Bukkit.getOnlinePlayers()) {
+					players.hidePlayer(player);
+					players.showPlayer(player);
+				}
+				} catch (NoSuchMethodException | SecurityException | IllegalAccessException
+						| IllegalArgumentException | InvocationTargetException | NoSuchFieldException e) {
+						e.printStackTrace();
+				}
 		p.setPlayerListName(rank + tag + " " + name);
 		p.setDisplayName(rank + tag + " " + name);
 		p.setCustomName(rank + tag + " " + name);
