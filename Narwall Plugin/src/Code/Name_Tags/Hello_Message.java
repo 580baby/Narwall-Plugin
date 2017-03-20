@@ -1,4 +1,4 @@
-package com.babyyt.Name_Tags;
+package Code.Name_Tags;
 
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -6,9 +6,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.babyyt.Main;
-
-import Generic_Classes.Get_Tag;
+import Code.Main;
+import Code.Generic_Classes.Get_Rank;
+import Code.Generic_Classes.Get_Tag;
 
 public class Hello_Message implements Listener {
 	private Main core;
@@ -20,15 +20,19 @@ public class Hello_Message implements Listener {
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e) {
 		String name;
+		String rank;
+		String tag;
 		Player p = e.getPlayer();
-		name = Get_Tag.getName(p);
+		name = p.getName();
+		rank = Get_Rank.getRank(p);
+		tag = Get_Tag.getTag(p);
 		String welcomeMessage = ChatColor.translateAlternateColorCodes('&',
 				core.getConfig().getString("Welcome Message"));
 		String welcomeMessage2 = ChatColor.translateAlternateColorCodes('&',
 				core.getConfig().getString("Welcome Message2"));
 		e.setJoinMessage(null);
 		core.getServer().broadcastMessage("");
-		core.getServer().broadcastMessage(welcomeMessage + " " + name + " " + welcomeMessage2);
+		core.getServer().broadcastMessage(welcomeMessage + " " + rank + tag + " " + name + " " + welcomeMessage2);
 		core.getServer().broadcastMessage("");
 
 	}

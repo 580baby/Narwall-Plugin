@@ -1,4 +1,4 @@
-package com.babyyt.Inventory;
+package Code.Inventory;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -14,7 +14,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.babyyt.Main;
+import Code.Main;
 
 @SuppressWarnings("unused")
 public class compassClick implements Listener {

@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.babyyt.Main;
-
+import Code.Main;
 import net.md_5.bungee.api.ChatColor;
 
 public class V implements CommandExecutor {

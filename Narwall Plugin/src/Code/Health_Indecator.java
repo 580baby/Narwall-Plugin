@@ -1,4 +1,4 @@
-package com.babyyt;
+package Code;
 
 import java.util.logging.Logger;
 import org.bukkit.ChatColor;

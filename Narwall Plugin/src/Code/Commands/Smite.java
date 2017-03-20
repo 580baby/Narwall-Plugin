@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import java.util.Collection;
 import java.util.Set;
@@ -14,7 +14,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Smite implements CommandExecutor {
 	public Smite(Main main) {

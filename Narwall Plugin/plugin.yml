@@ -1,4 +1,4 @@
-main: com.rooney.Main
+main: Code.Main
 version: 1.2.1
 name: NarwallPlugin
 

@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -8,7 +8,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Lol implements CommandExecutor {
 	@SuppressWarnings("unused")

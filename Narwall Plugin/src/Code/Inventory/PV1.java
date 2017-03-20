@@ -1,4 +1,4 @@
-package com.babyyt.Inventory;
+package Code.Inventory;
 
 import java.util.List;
 
@@ -15,7 +15,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class PV1 implements CommandExecutor, Listener {
 	private Main core;

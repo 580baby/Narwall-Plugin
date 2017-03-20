@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import org.bukkit.GameMode;
 import org.bukkit.command.Command;
@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Gamemode_spectator implements CommandExecutor {
 	@SuppressWarnings("unused")

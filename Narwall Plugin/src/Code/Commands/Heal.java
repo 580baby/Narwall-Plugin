@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -7,7 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Heal implements CommandExecutor {
 	@SuppressWarnings("unused")

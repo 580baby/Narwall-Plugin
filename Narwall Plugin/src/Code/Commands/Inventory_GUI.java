@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -12,7 +12,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Inventory_GUI implements CommandExecutor, Listener {
 	@SuppressWarnings("unused")

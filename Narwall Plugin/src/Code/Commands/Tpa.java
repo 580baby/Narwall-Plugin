@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import java.io.File;
 import java.io.InputStream;
@@ -20,7 +20,8 @@ import org.bukkit.plugin.PluginLoader;
 import org.bukkit.scheduler.BukkitScheduler;
 
 import com.avaje.ebean.EbeanServer;
-import com.babyyt.Main;
+
+import Code.Main;
 
 public class Tpa implements CommandExecutor, Plugin {
 	private Main core;

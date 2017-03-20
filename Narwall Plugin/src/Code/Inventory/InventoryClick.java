@@ -1,4 +1,4 @@
-package com.babyyt.Inventory;
+package Code.Inventory;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Effect;
@@ -12,7 +12,7 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class InventoryClick implements Listener {
 	@SuppressWarnings("unused")

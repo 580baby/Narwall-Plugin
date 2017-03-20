@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import org.bukkit.World;
 import org.bukkit.command.Command;
@@ -7,8 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Blaze;
 import org.bukkit.entity.Player;
 
-import com.babyyt.Main;
-
+import Code.Main;
 import net.md_5.bungee.api.ChatColor;
 
 

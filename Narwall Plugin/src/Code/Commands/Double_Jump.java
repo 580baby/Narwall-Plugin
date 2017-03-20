@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,8 +16,7 @@ import org.bukkit.event.player.PlayerToggleFlightEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.babyyt.Main;
-
+import Code.Main;
 import net.md_5.bungee.api.ChatColor;
 
 public class Double_Jump implements CommandExecutor, Listener {

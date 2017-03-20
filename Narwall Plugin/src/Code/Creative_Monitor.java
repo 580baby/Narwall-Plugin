@@ -1,4 +1,4 @@
-package com.babyyt;
+package Code;
 
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;

@@ -1,10 +1,10 @@
-package com.babyyt.SetPoints;
+package Code.SetPoints;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class SetPoints implements Listener {
 	private Main core;

@@ -1,4 +1,4 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import java.util.ArrayList;
 
@@ -17,7 +17,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Kit implements CommandExecutor, Listener {
 	public Kit(Main main) {

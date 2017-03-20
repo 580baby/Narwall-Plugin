@@ -1,11 +1,11 @@
-package com.babyyt.commands;
+package Code.Commands;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class npc implements CommandExecutor, Listener {
 	@SuppressWarnings("unused")

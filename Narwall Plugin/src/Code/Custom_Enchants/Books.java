@@ -1,4 +1,4 @@
-package com.babyyt.Custom_Enchants;
+package Code.Custom_Enchants;
 
 import java.util.ArrayList;
 
@@ -15,7 +15,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Books implements CommandExecutor, Listener {
 	private Main core;

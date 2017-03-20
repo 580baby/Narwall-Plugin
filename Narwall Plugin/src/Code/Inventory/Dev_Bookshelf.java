@@ -1,4 +1,4 @@
-package com.babyyt.Inventory;
+package Code.Inventory;
 
 import java.util.HashMap;
 import java.util.List;
@@ -16,7 +16,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Dev_Bookshelf implements Listener {
 

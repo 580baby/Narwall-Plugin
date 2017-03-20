@@ -1,11 +1,11 @@
-package com.babyyt.Custom_Enchants;
+package Code.Custom_Enchants;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-import com.babyyt.Main;
+import Code.Main;
 
 public class Enchantment_With_books implements Listener{
 	public Enchantment_With_books(Main main) {
