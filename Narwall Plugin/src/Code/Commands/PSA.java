@@ -32,6 +32,9 @@ public class PSA implements CommandExecutor {
 			} else {
 				sender.sendMessage(ChatColor.DARK_RED + "Please specify a message!");
 			}
+		} else {
+			sender.sendMessage(ChatColor.DARK_RED + "You do not have permission to do that " +
+					ChatColor.BOLD + "command!");
 		}
 		return false;
 	}
