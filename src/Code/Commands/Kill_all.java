@@ -23,6 +23,7 @@ public class Kill_all implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("ka")) {
 				if (sender.hasPermission("narwall.ka")) {
 					Player player = (Player) sender;
+					int i = 1;
 					World world = player.getWorld();
 					player.sendMessage(ChatColor.DARK_RED + "All Entities Died");
 					for (Entity e : world.getEntities()) {
