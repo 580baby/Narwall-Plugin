@@ -21,7 +21,6 @@ public class Kill_all implements CommandExecutor {
 
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("ka")) {
-			if (sender instanceof Player) {
 				if (sender.hasPermission("narwall.ka")) {
 					Player player = (Player) sender;
 					World world = player.getWorld();
@@ -56,7 +55,7 @@ public class Kill_all implements CommandExecutor {
 						}
 					}
 				}
-			}
+			
 		}
 		return false;
 	}
