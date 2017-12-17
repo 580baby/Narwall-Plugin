@@ -1,0 +1,241 @@
+main: Code.Main
+version: 1.2.1
+name: NarwallPlugin
+
+commands:
+ name:
+    description: Custom Names an item in your hand.
+ dummy:
+    description: Dev command for testing things.
+ npc:
+    description: Spawns an npc in the world.
+ jump:
+    description: Gives you the double jump item.
+ dev:
+    description: Gives you the Dev inventory set.
+ v:
+    description: Gives you true Invisibility.
+ world:
+    description: Lists and changes the players world.
+ smite:
+    description: Strikes lightning at the players eye location.
+ kit:
+    description: Gives you the specified kit.
+ pv:
+    description: Open the specified player vault.
+ tpahere:
+    description: Asks a player to teleport to you.
+ rb:
+    description: Redeems custom enchantment books
+ enchantment:
+    description: Adds the specified enchantment at the specified level.
+ psa:
+    description: Announces a Public Service Anouncment!
+ invsee:
+    description: Open's the specified players inventory.
+ delhome:
+    description: Deletes a home that the player specify's.
+ home:
+    description: Bring the player to the specifyed home.
+ sethome:
+    description: Sets a home at the players location.
+ tpaccept:
+    description: Accept a teleport reqest.
+ tpa:
+    description: Send a teleport reqest to a player.
+ glitchfix:
+    description: Glitch-Fixes the gear in hand.
+ fix:
+    description: Fixes your gear in hand.
+ resetwalkspeed:
+    description: Resets your walking speed.
+ fastwalking:
+    description: Makes the player walk at max speed.
+ fastfly:
+    description: Sets your fly speed to max.
+ cxp:
+    description: Reset your xp.
+ resetflyspeed:
+    description: Resets your fly speed.
+ fly:
+    description: Set you to fly mode.
+ heal:
+    description: Heal you.
+    aliases: [h, hl, regen]
+ damage:
+    description: Deals 5 hearts (10 hits) to the player.
+ feed:
+    description: Fills up the your hunger and saturation bars.
+    aliases: [eat, f, fd]
+ nofly:
+    description: Takes you out of fly mode.
+ heed:
+    description: Feeds and Heals you.
+ armor:
+    description: Give you full diamond armor.
+ flowers:
+    description: Spawns in flowers.
+ ka:
+    description: Kill all non-players.
+ milk:
+    description: Removes potion effects.
+ gs:
+    description: Sets your gamemode to Survival.
+ gc:
+    description: Sets your gamemode to Creative.
+ ga:
+    description: Sets your gamemode to Adveture.
+ gsp:
+    description: Sets gamemode to Spectator.
+ pv:
+    description: Open's your player vault.
+ ultpick:
+    description: Gives a very good pickaxe.
+ ci:
+    description: Clears your inventory.
+ nuke:
+    description: Why don't you find out.
+ menu:
+    description: Opens the teleport menu.
+ lol:
+    description: Gives you the lol item.
+ craft:
+    description: Opens a workbench.
+ getpoints:
+    description: Removes mob drops and gives points for them.
+permissions:
+narwall.owner:
+    default: false
+    description: Grants the owner tag
+narwall.coowner:
+    description: Grants the co-owner tag
+    default: false
+narwall.admin:
+    description: Grants the admin tag
+    default: false
+narwall.moderator:
+    description: Grants the moderator tag
+    default: false
+narwall.helper:
+    description: Grants the helper tag
+    default: false
+narwall.newb:
+    description: Grants the newb tag
+    default: false
+narwall.dev:
+    description: Grants the dev tag
+    default: false
+narwall.fly:
+    description: Grants access to the /fly command.
+    default: false
+narwall.invsee:
+    description: Grants access to the /invsee command.
+    default: false
+narwall.jump:
+   description: Grants access to the /jump command. 
+   default: false
+narwall.lol:
+   description: Grants access to the /lol command 
+   default: false
+narwall.nuke:
+   description: Grants access to the /nuke command
+   default: false
+narwall.craft:
+   description : Grants access to /craft command
+   default: false
+narwall.heal:
+   description: Grants access to the /heal command
+   default: false
+narwall.feed:
+   description: Grants access to /feed command
+   default: false
+narwall.menu:
+   description: Grant's access to the /menu command
+   default: false
+narwall.heed:
+   description: Grant's access to the /heed command
+   default: false
+narwall.gs:
+   description: Grant's access to the /gs command
+   default: false
+narwall.gsp:
+   description: Grants access to the /gsp command
+   default: false
+narwall.gc:
+   description: Grants access to the /gc command
+   default: false
+narwall.pv:
+   description: Grants access to the /pv command
+   default: false
+narwall.ultpick:
+   description: Grant's access to the /ultpick command
+   default: false
+narwall.*:
+   description: Grant's access to all commands
+   default: false
+narwall.v:
+   description: Grant's access to the /v command
+   default: false
+narwall.world:
+   description: Grant's access to the /world command
+   default: false
+narwall.smite:
+   description: Grant's access to the /smite command
+   default: false
+narwall.kit:
+   description: Grant's access to the /kit command
+   default: false
+narwall.tpa:
+   description: Grant's access to the /tpa, tpahere and tpaccept commands
+   default: false
+narwall.rb:
+   description: Grant's access to the /rb command
+   default: false
+narwall.enchantment:
+   description: Grant's access to the /enchantment command
+   default: false
+narwall.psa:
+   description: Grant's access to the /psa command
+   default: false
+narwall.home:
+   description: Grant's access to the /home, /sethome, and /delhome commands
+   default: false
+narwall.glitchfix:
+   description: Grant's access to the /glitchfix command
+   default: false
+narwall.fix:
+   description: Grant's access to the /fix command
+   default: false
+narwall.fastwalking:
+   description: Grant's access to the /fastwalking, and /resetwalkspeed commands
+   default: false
+narwall.fastfly:
+   description: Grant's access to the /fastfly, and /resetflyspeed commands
+   default: false
+narwall.cxp:
+   description: Grant's access to the /cxp command
+   default: false
+narwall.armor:
+   description: Grant's access to the /armor command
+   default: false
+narwall.flowers:
+   description: Grant's access to the /flowers command
+   default: false
+narwall.ka:
+   description: Grant's access to the /ka command
+   default: false
+narwall.milk:
+   description: Grant's access to the /milk command
+   default: false
+narwall.ga:
+   description: Grant's access to the /ga command
+   default: false
+narwall.ci:
+   description: Grant's access to the /ci command
+   default: false
+narwall.damage:
+   description: Grant's access to the /damage command
+   default: false
+narwall.getpoints:
+   description: Grant's access to the /getpoints command
+   default: false
