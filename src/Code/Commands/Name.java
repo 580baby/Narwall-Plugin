@@ -24,6 +24,7 @@ public class Name implements CommandExecutor {
 		this.core = main;
 	}
 
+	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
 		if (sender instanceof Player) {
 			if (sender.hasPermission("narwall.name")) {

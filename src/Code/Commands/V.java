@@ -22,6 +22,7 @@ public class V implements CommandExecutor {
 		this.core = main;
 	}
 
+	@SuppressWarnings("deprecation")
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
 		if (sender instanceof Player) {
