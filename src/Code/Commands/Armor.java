@@ -23,8 +23,8 @@ public class Armor implements CommandExecutor {
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("armor"))
 			if (sender instanceof Player){
-				if(sender.hasPermission("narwall.armor")){
 				Player player = (Player) sender;
+				if(sender.hasPermission("narwall.armor")){
 				ItemStack Boots = (new ItemStack(313));
 				ItemStack Chestplate = (new ItemStack(Material.DIAMOND_CHESTPLATE));
 				ItemStack Helmet = (new ItemStack(Material.DIAMOND_HELMET));
@@ -58,6 +58,8 @@ public class Armor implements CommandExecutor {
 				player.getEquipment().setHelmet(Helmet);
 				player.getEquipment().setChestplate(Chestplate);
 				player.sendMessage(ChatColor.BLUE + "You now have " + ChatColor.RED + "OP Armor!");
+				} else { 
+					player.sendMessage(ChatColor.DARK_RED + "You do not have permission!");
 				}
 			}
 		return false;
