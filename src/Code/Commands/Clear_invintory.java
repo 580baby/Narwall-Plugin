@@ -1,5 +1,6 @@
 package Code.Commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -479,6 +480,9 @@ public class Clear_invintory implements CommandExecutor {
 
 						}
 					}
+			} else {
+				player.sendMessage(ChatColor.DARK_RED + "You do not have permission!");
+			}	
 			}
 		return false;
 	}
