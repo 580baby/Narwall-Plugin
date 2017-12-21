@@ -52,7 +52,6 @@ public class Tags implements Listener {
 				Field ff = profile.getClass().getDeclaredField("name");
 				ff.setAccessible(true);
 				ff.set(profile, Get_ChatColor.getChatColor(p) + name);
-				name = p.getName();
 				try {
 					Class.forName("com.mojang.authlib.GameProfile");
 				} catch (ClassNotFoundException e1) {
