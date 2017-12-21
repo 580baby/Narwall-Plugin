@@ -20,12 +20,12 @@ public class Clear_invintory implements CommandExecutor {
 
 	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
-		if (cmd.getName().equalsIgnoreCase("ci"))
+		if (cmd.getName().equalsIgnoreCase("ci")) {
+			Player player = (Player) sender;
 			if (sender.hasPermission("narwall.ci")) {
 				if (sender instanceof Player)
 					if (args.length == 0) {
 						{
-							Player player = (Player) sender;
 							player.getEquipment().setBoots(new ItemStack(0));
 							player.getEquipment().setLeggings(new ItemStack(0));
 							player.getEquipment().setHelmet(new ItemStack(0));
@@ -482,8 +482,8 @@ public class Clear_invintory implements CommandExecutor {
 					}
 			} else {
 				player.sendMessage(ChatColor.DARK_RED + "You do not have permission!");
-			}	
 			}
+		}
 		return false;
 	}
 }
