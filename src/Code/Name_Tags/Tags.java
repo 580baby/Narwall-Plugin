@@ -16,6 +16,7 @@ import org.bukkit.scoreboard.ScoreboardManager;
 import org.bukkit.scoreboard.Team;
 
 import Code.Main;
+import Code.Generic_Classes.Get_ChatColor;
 import Code.Generic_Classes.Get_Rank;
 import Code.Generic_Classes.Get_Tag;
 
@@ -24,6 +25,7 @@ public class Tags implements Listener {
 	public Tags(Main main) {
 	}
 
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void playerJoin(PlayerJoinEvent e) {
 		ScoreboardManager sbm = Bukkit.getScoreboardManager();
@@ -38,33 +40,32 @@ public class Tags implements Listener {
 		Player p = e.getPlayer();
 		String rank = Get_Rank.getRank(p);
 		String name = p.getName();
-		String pName = name;
 		String tag = Get_Tag.getTag(p);
 		try {
-			Method getHandle = player.getClass().getMethod("getHandle", (Class<?>[]) null);
+			Method getHandle = p.getClass().getMethod("getHandle", (Class<?>[]) null);
 			try {
 				Class.forName("com.mojang.authlib.GameProfile");
-				} catch (ClassNotFoundException e) {
+				} catch (ClassNotFoundException e1) {
 				}
-				Object profile = getHandle.invoke(player).getClass().getMethod("getProfile")
-					.invoke(getHandle.invoke(player));
+				Object profile = getHandle.invoke(p).getClass().getMethod("getProfile")
+					.invoke(getHandle.invoke(p));
 				Field ff = profile.getClass().getDeclaredField("name");
 				ff.setAccessible(true);
-				ff.set(profile, Get_ChatColor.getChatColor(player) + name);
-				name = player.getName();
+				ff.set(profile, Get_ChatColor.getChatColor(p) + name);
+				name = p.getName();
 				try {
 					Class.forName("com.mojang.authlib.GameProfile");
-				} catch (ClassNotFoundException e) {
+				} catch (ClassNotFoundException e1) {
 				}
 				ff.setAccessible(true);
 				ff.set(profile, name);
 				for (Player players : Bukkit.getOnlinePlayers()) {
-					players.hidePlayer(player);
-					players.showPlayer(player);
+					players.hidePlayer(p);
+					players.showPlayer(p);
 				}
 				} catch (NoSuchMethodException | SecurityException | IllegalAccessException
-						| IllegalArgumentException | InvocationTargetException | NoSuchFieldException e) {
-						e.printStackTrace();
+						| IllegalArgumentException | InvocationTargetException | NoSuchFieldException e1) {
+						e1.printStackTrace();
 				}
 		p.setPlayerListName(rank + tag + " " + name);
 		p.setDisplayName(rank + tag + " " + name);
