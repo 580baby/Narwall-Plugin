@@ -74,7 +74,7 @@ import Code.Name_Tags.Chat_Colors;
 import Code.Name_Tags.Goodbye_Message;
 import Code.Name_Tags.Hello_Message;
 import Code.Name_Tags.Tags;
-import Code.SetPoints.SetPoints;
+import SetPoints.SetPoints;
 
 public class Main extends JavaPlugin implements CommandExecutor, Listener {
 	public HashMap<UUID, Inventory> pv1 = new HashMap<UUID, Inventory>();

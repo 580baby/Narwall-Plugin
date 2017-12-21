@@ -19,8 +19,6 @@ import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.PluginLoader;
 import org.bukkit.scheduler.BukkitScheduler;
 
-import com.avaje.ebean.EbeanServer;
-
 import Code.Main;
 
 public class Tpa implements CommandExecutor, Plugin {
@@ -113,12 +111,6 @@ public class Tpa implements CommandExecutor, Plugin {
 
 	@Override
 	public File getDataFolder() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public EbeanServer getDatabase() {
 		// TODO Auto-generated method stub
 		return null;
 	}

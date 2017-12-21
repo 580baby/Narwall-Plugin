@@ -1,4 +1,4 @@
-package Code.SetPoints;
+package SetPoints;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
