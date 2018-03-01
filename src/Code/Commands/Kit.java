@@ -523,7 +523,7 @@ public class Kit implements CommandExecutor, Listener {
 						im.setDisplayName(ChatColor.DARK_GREEN + "Panda's anti-580baby Stick");
 						sword.setItemMeta(im);
 
-						// Pufferfish
+						// Pufferfishs
 
 						ItemStack bow = new ItemStack(Material.RAW_FISH, 1, 3);
 						ItemMeta bowim = bow.getItemMeta();
