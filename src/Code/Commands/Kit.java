@@ -10,14 +10,18 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
+import org.bukkit.entity.SplashPotion;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import org.bukkit.inventory.meta.PotionMeta;
+import org.bukkit.potion.PotionEffectType;
 
 import Code.Main;
+import javafx.scene.paint.Color;
 
 public class Kit implements CommandExecutor, Listener {
 	public Kit(Main main) {
@@ -81,7 +85,8 @@ public class Kit implements CommandExecutor, Listener {
 					fishermanl.add(ChatColor.LIGHT_PURPLE + "Protection III Diamond Boots");
 					fishermanim.setLore(fishermanl);
 					fisherman.setItemMeta(fishermanim);
-					inv.setItem(2, fisherman);
+					inv.setItem(2, fisherman); 
+
 					p.closeInventory();
 					p.openInventory(inv);
 					p.sendMessage(ChatColor.GOLD + "Kit menu opened!");
@@ -402,6 +407,180 @@ public class Kit implements CommandExecutor, Listener {
 						ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
 						ItemMeta hemletim = helmet.getItemMeta();
 						hemletim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, true);
+						helmet.setItemMeta(hemletim);
+
+						// add items
+						ItemStack[] inv = p.getInventory().getContents();
+
+						ItemStack leggings = p.getInventory().getLeggings();
+						ItemStack chestplate = p.getInventory().getChestplate();
+						ItemStack boot = p.getInventory().getBoots();
+						ItemStack helm = p.getInventory().getHelmet();
+
+						if (!(leggings == null)) {
+							p.getInventory().setLeggings(legs);
+						} else {
+							p.getInventory().setLeggings(legs);
+						}
+
+						if (!(chestplate == null)) {
+							p.getInventory().setChestplate(chest);
+
+						} else {
+							p.getInventory().setChestplate(chest);
+						}
+
+						if (!(boot == null)) {
+							p.getInventory().setBoots(boots);
+
+						} else {
+							p.getInventory().setBoots(boots);
+						}
+
+						if (!(helm == null)) {
+							p.getInventory().setHelmet(helmet);
+						} else {
+							p.getInventory().setHelmet(helmet);
+						}
+
+						if (!(inv[0] == null)) {
+							p.getInventory().removeItem(inv[0]);
+							p.getInventory().setItem(0, sword);
+
+						} else {
+							p.getInventory().setItem(0, sword);
+						}
+
+						if (!(inv[1] == null)) {
+							p.getInventory().removeItem(inv[1]);
+							p.getInventory().setItem(1, bow);
+
+						} else {
+							p.getInventory().setItem(1, bow);
+						}
+
+						if (!(inv[9] == null)) {
+							p.getInventory().removeItem(inv[9]);
+							p.getInventory().setItem(9, arrows);
+
+						} else {
+							p.getInventory().setItem(9, arrows);
+						}
+
+						if (!(inv[8] == null)) {
+							p.getInventory().removeItem(inv[8]);
+							p.getInventory().setItem(8, gapples);
+
+						} else {
+							p.getInventory().setItem(8, gapples);
+						}
+
+						// add items back
+						try {
+							if (leggings != null) {
+								p.getInventory().addItem(leggings);
+							}
+
+							if (chestplate != null) {
+								p.getInventory().addItem(chestplate);
+							}
+
+							if (helm != null) {
+								p.getInventory().addItem(helm);
+							}
+
+							if (helm != null) {
+								p.getInventory().addItem(helm);
+							}
+
+							if (leggings != null) {
+								p.getInventory().addItem(leggings);
+							}
+
+							if (inv[0] != null) {
+								p.getInventory().addItem(inv[0]);
+							}
+
+							if (inv[1] != null) {
+								p.getInventory().addItem(inv[1]);
+							}
+
+							if (inv[8] != null) {
+								p.getInventory().addItem(inv[8]);
+							}
+
+							if (inv[9] != null) {
+								p.getInventory().addItem(inv[9]);
+							}
+
+						} catch (IllegalArgumentException iae) {
+						}
+					} else if (is.getItemMeta().getDisplayName().equalsIgnoreCase(ChatColor.BLUE + "Fisherman")) {
+						// sword
+						ItemStack sword = new ItemStack(Material.FISHING_ROD);
+						ItemMeta im = sword.getItemMeta();
+						im.addEnchant(Enchantment.KNOCKBACK, 5, true);
+						im.setDisplayName(ChatColor.DARK_GREEN + "Panda's anti-580baby Stick");
+						sword.setItemMeta(im);
+
+						// Pufferfish
+
+						ItemStack bow = new ItemStack(Material.RAW_FISH, 1, 3);
+						ItemMeta bowim = bow.getItemMeta();
+						bowim.add(Enchantment.DAMAGE_ALL, 10, true);
+						bowim.setDisplayName(ChatColor.DARK_AQUA + "Puff the Magic Dragon");
+						bow.setItemMeta(bowim);
+
+						// Poison Potion 3
+						ItemStack gapples = new ItemStack(Material.SPLASH_POTION, 8);
+						PotionMeta gim = (PotionMeta) SplashPotion.getItemMeta();
+						gim.setDisplayName(ChatColor.DARK_GREEN + "Soda");
+						gim.addCustomEffect(new PotionEffect(PotionEffectType.POISON, 200, 2), true);
+						gim.setColor(Color.color(47, 138, 6));
+						gapples.setItemMeta(gim);
+
+						// HotFish
+						ItemStack fish = new ItemStack(Material.RAW_FISH, 1, 2);
+						ItemMeta fishim = fish.getItemMeta();
+						fishim.add(Enchantment.FIRE_ASPECT, 1, true);
+						fishim.setDisplayName(ChatColor.DARK_RED + "Finding Where Nemo's Health Went");
+						fish.setItemMeta(fishim);
+						
+						//Gapples
+						ItemStack gap = new ItemStack(Material.GOLDEN_APPLE, 8);
+						ItemMeta gapim = gap.getItemMeta();
+						gapim.setDisplayName(ChatColor.GOLD + "Your Last Hope");
+						gap.setItemMeta(gapim);
+					
+						
+						
+						// player stuff
+						e.setCancelled(true);
+						p.closeInventory();
+						p.sendMessage(ChatColor.BLUE + "You now have the Fisherman kit!");
+
+						// leggings
+						ItemStack legs = new ItemStack(Material.DIAMOND_LEGGINGS);
+						ItemMeta legsim = legs.getItemMeta();
+						legsim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3, true);
+						legs.setItemMeta(legsim);
+
+						// chestplate
+						ItemStack chest = new ItemStack(Material.DIAMOND_CHESTPLATE);
+						ItemMeta chestsim = chest.getItemMeta();
+						chestsim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3, true);
+						chest.setItemMeta(chestsim);
+
+						// boots
+						ItemStack boots = new ItemStack(Material.DIAMOND_BOOTS);
+						ItemMeta bootsim = boots.getItemMeta();
+						bootsim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3, true);
+						boots.setItemMeta(bootsim);
+
+						// helmet
+						ItemStack helmet = new ItemStack(Material.DIAMOND_HELMET);
+						ItemMeta hemletim = helmet.getItemMeta();
+						hemletim.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 3, true);
 						helmet.setItemMeta(hemletim);
 
 						// add items
