@@ -19,7 +19,7 @@ public class Get_ChatColor {
 		} else if (p.hasPermission("narwall.helper")) {
 			c = ChatColor.GRAY;
 		} else {
-			c = null;
+			c = ChatColor.WHITE;
 		}
 		return c;
 	}
