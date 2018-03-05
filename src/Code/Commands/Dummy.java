@@ -1,6 +1,12 @@
 package Code.Commands;
 
-import org.bukkit.Bukkit;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Map;
+
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -9,27 +15,26 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.scoreboard.Scoreboard;
-import org.bukkit.scoreboard.Team;
+import org.bukkit.util.io.BukkitObjectInputStream;
+import org.bukkit.util.io.BukkitObjectOutputStream;
 
 import Code.Main;
-import Code.Save_Inventory;
 import net.md_5.bungee.api.ChatColor;
 
 public class Dummy implements CommandExecutor {
-	public Dummy(Main main) {
-	}
+	private Main core;
 
+	public Dummy(Main main) {
+		this.core = main;
+	}
+	
 	public boolean onCommand(CommandSender sender, Command cmd, String alias, String[] args) {
 		if (cmd.getName().equalsIgnoreCase("dummy")) {
 			if (sender instanceof Player) {
 				Player p = (Player) sender;
 				if (sender.hasPermission("narwall.dummy")) {
 					if (args.length >= 1) {
-						if (args[0].equalsIgnoreCase("save-inv")) {
-							Save_Inventory.saveInventory(p, p.getWorld());
-							p.sendMessage(ChatColor.DARK_BLUE + "Inventory Saved!");
-						} else if (args[0].equalsIgnoreCase("spec-item")) {
+						 if (args[0].equalsIgnoreCase("spec-item")) {
 							if (args[1].equalsIgnoreCase("sweep-sword")) {
 								ItemStack item = new ItemStack(Material.GOLD_SWORD);
 								ItemMeta im = item.getItemMeta();
@@ -41,17 +46,40 @@ public class Dummy implements CommandExecutor {
 							} else {
 								p.sendMessage(ChatColor.DARK_RED + "Unknown Item!");
 							}
-						} else if (args[0].equalsIgnoreCase("team")) {
-							for (Player player : Bukkit.getOnlinePlayers()) {
-								final Scoreboard sb = Bukkit.getScoreboardManager().getNewScoreboard();
-								sb.registerNewTeam("rank");
-								sb.registerNewTeam("rank1");
-								final Team rank = sb.getTeam("rank");
-								final Team rank1 = sb.getTeam("rank1");
-								rank.setPrefix(ChatColor.GREEN + "[RANK] ");
-								rank1.setPrefix(ChatColor.YELLOW + "[RANK1] ");
-								player.sendMessage("ad astra");
+						} else if (args[0].equalsIgnoreCase("test")) {
+							Map<String, Object> one = p.getInventory().getItem(0).serialize();
+							Map<String, Object> two = p.getInventory().getItem(1).serialize();
+							Map<String, Object> three = p.getInventory().getItem(2).serialize();
+							Map<String, Object> four = p.getInventory().getItem(3).serialize();
+							ArrayList<Map<String, Object>> l = new ArrayList<Map<String, Object>>();
+							l.add(one);
+							l.add(two);
+							l.add(three);
+							l.add(four);	
+							FileOutputStream fos;
+							try {
+								fos = new FileOutputStream(core.getDataFolder() + "text.txt");
+								BukkitObjectOutputStream boos = new BukkitObjectOutputStream(fos);
+								boos.writeObject(l);
+								boos.close();
+								FileInputStream fis = new FileInputStream(core.getDataFolder() + "text.txt");
+								BukkitObjectInputStream bois = new BukkitObjectInputStream(fis);
+								@SuppressWarnings("unchecked")
+								ArrayList<Map<String, Object>> o = (ArrayList<Map<String, Object>>) bois.readObject();
+								bois.close();
+								p.getInventory().addItem(ItemStack.deserialize(o.get(0)));
+								p.getInventory().addItem(ItemStack.deserialize(o.get(1)));
+								p.getInventory().addItem(ItemStack.deserialize(o.get(2)));
+								p.getInventory().addItem(ItemStack.deserialize(o.get(3)));
+							} catch (FileNotFoundException e) {
+								e.printStackTrace();
+							} catch (IOException e) {
+								e.printStackTrace();
+							} catch (ClassNotFoundException e) {
+								e.printStackTrace();
 							}
+							
+							
 						} else {
 							p.sendMessage(ChatColor.DARK_RED + "Unknown Argument!");
 						}
