@@ -51,6 +51,9 @@ public class World_Stuffs implements CommandExecutor {
 								if (core.getServer().getWorld(s) != null) {
 									World w = core.getServer().getWorld(s);
 									Location l = w.getSpawnLocation();
+									if (w.getName().equals("Server")) {
+										l = new Location(Bukkit.getWorld("Server"), -1975.5, 70, 464.5, 0, -90);
+									}
 									p.teleport(l);
 									p.sendMessage(ChatColor.DARK_PURPLE + "You been teleported to the spawn of "
 											+ p.getWorld().getName());
