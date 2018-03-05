@@ -24,9 +24,9 @@ public class PSA implements CommandExecutor {
 					}
 					String allArgs = sb.toString().trim();
 					String h = allArgs.toUpperCase();
-					core.getServer().broadcastMessage("");
+					core.getServer().broadcastMessage(" ");
 					core.getServer().broadcastMessage(ChatColor.GOLD + "" + ChatColor.BOLD + "Server Broadcast: " + h);
-					core.getServer().broadcastMessage("");
+					core.getServer().broadcastMessage(" ");
 
 				}
 			} else {
