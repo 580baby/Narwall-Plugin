@@ -7,26 +7,31 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class FileEdit {
 	public static void WriteString(File file, String name, String value) throws IOException {
 		FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
 		BufferedWriter bw = new BufferedWriter(fw);
-		bw.write(name + "=" + value);
+		bw.write("\n" + name + "=" + value);
 		bw.close();
 	}
 
 	public static String ReadString(File file, String find) throws IOException {
 		String value = null;
 		Scanner s = new Scanner(file);
-		s.findWithinHorizon(find + "=", 0);
-		if(s.hasNext("\\d+")){
+		s.findWithinHorizon("\n" + find + "=", 0);
+		if (s.hasNext("\\d+")) {
 			value = Integer.toString(s.nextInt());
-		} else if(s.hasNext("\\w+")){
-			value = Character.toString(s.findWithinHorizon("\\w+", 0).charAt(0));
+		} else {
+			value = s.findWithinHorizon(Pattern.compile(".+"), 0).toString();
 		}
 		s.close();
 		return value;
+	}
+
+	public static void deleteFile(File file) {
+		file.delete();
 	}
 
 	public static void DeleteString(File file, String delete) throws IOException {
@@ -48,7 +53,7 @@ public class FileEdit {
 		FileWriter fw1 = new FileWriter(file.getAbsoluteFile(), false);
 		BufferedWriter bw2 = new BufferedWriter(fw1);
 		bw2.close();
-		for(String current : lines){
+		for (String current : lines) {
 			bw.write(current + "\r");
 		}
 		bw.close();
@@ -58,8 +63,8 @@ public class FileEdit {
 		DeleteString(file, name);
 		WriteString(file, name, newValue);
 	}
-	
-	public static void SetDefault(File file, String name, String value) throws IOException{
+
+	public static void SetDefault(File file, String name, String value) throws IOException {
 		Scanner s = new Scanner(file);
 		FileWriter fw = new FileWriter(file.getAbsoluteFile(), true);
 		BufferedWriter bw = new BufferedWriter(fw);

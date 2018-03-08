@@ -2,7 +2,11 @@ main: Code.Main
 version: 1.2.1
 name: NarwallPlugin
 
-commands:
+commands: 
+ t:
+    description: Removes some block for things.
+ fill2:
+    description: Fills dispensers in the specified radius.
  name:
     description: Custom Names an item in your hand.
  dummy:
